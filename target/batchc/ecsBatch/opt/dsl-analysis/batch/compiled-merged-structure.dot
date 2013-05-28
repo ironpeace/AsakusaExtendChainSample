@@ -1,18 +1,16 @@
 digraph {
     rankdir = LR;
-    "e41c35e3-75e8-45cd-803d-afffe0c63c85" [shape=box, label="Batch\necsBatch"];
-    "20d2835f-0821-4169-8700-d42c30a1a8f5" [shape=box, label="JobFlow\nTheExtendChainSampleJobFlow"];
-    "5486fc26-c451-4e29-b61c-4c271884cc51" [shape=box, label="Stage\nironpeace.batchapp.ecsBatch.theExtendChainSampleJobFlow.stage0001.StageClient"];
-    "7b3b4b38-167d-4a39-9cfe-3750e7552de7" [shape=box, label="Mapper\nironpeace.batchapp.ecsBatch.theExtendChainSampleJobFlow.stage0001.StageMapper1"];
-    "5486fc26-c451-4e29-b61c-4c271884cc51" -> "7b3b4b38-167d-4a39-9cfe-3750e7552de7";
-    "a15086be-ab4f-4e21-8ee3-0b58d8a863ae" [shape=box, label="Fragment\nironpeace.batchapp.ecsBatch.theExtendChainSampleJobFlow.stage0001.MapFragment1"];
-    "12cf3ae4-3212-4be1-8a48-b87b7c30920a" [shape=box, label="Convert\nExtendChainSampleOperator#convert1"];
-    "a15086be-ab4f-4e21-8ee3-0b58d8a863ae" -> "12cf3ae4-3212-4be1-8a48-b87b7c30920a";
-    "7b3b4b38-167d-4a39-9cfe-3750e7552de7" -> "a15086be-ab4f-4e21-8ee3-0b58d8a863ae";
-    "5c10e1ec-4370-4cb0-9278-b854880adddf" [shape=box, label="Fragment\nironpeace.batchapp.ecsBatch.theExtendChainSampleJobFlow.stage0001.MapFragment2"];
-    "21bd102c-d26c-4f9f-a0b2-8054465a92db" [shape=box, label="Convert\nExtendChainSampleOperator#convert2"];
-    "5c10e1ec-4370-4cb0-9278-b854880adddf" -> "21bd102c-d26c-4f9f-a0b2-8054465a92db";
-    "7b3b4b38-167d-4a39-9cfe-3750e7552de7" -> "5c10e1ec-4370-4cb0-9278-b854880adddf";
-    "20d2835f-0821-4169-8700-d42c30a1a8f5" -> "5486fc26-c451-4e29-b61c-4c271884cc51";
-    "e41c35e3-75e8-45cd-803d-afffe0c63c85" -> "20d2835f-0821-4169-8700-d42c30a1a8f5";
+    "fbb9b3ed-6c5b-4dc4-9904-3f14a24ec1c7" [shape=box, label="Batch\necsBatch"];
+    "0ee6673c-1fe7-417a-9f06-8862aa978be7" [shape=box, label="JobFlow\nTheExtendChainSampleJobFlow"];
+    "67cd2ee1-6106-4856-9818-3a496f8d9172" [shape=box, label="Stage\nironpeace.batchapp.ecsBatch.theExtendChainSampleJobFlow.stage0001.StageClient"];
+    "453c795f-02b1-4266-9137-2a228dc36f04" [shape=box, label="Mapper\nironpeace.batchapp.ecsBatch.theExtendChainSampleJobFlow.stage0001.StageMapper1"];
+    "67cd2ee1-6106-4856-9818-3a496f8d9172" -> "453c795f-02b1-4266-9137-2a228dc36f04";
+    "ed70519a-62fc-4dee-9d44-af86d95b56bd" [shape=box, label="Fragment\nironpeace.batchapp.ecsBatch.theExtendChainSampleJobFlow.stage0001.MapFragment1"];
+    "fcc36b28-3043-4e31-ac82-f6ecbdf3e7f3" [shape=box, label="Update\nExtendChainSampleOperator#updatedMid1"];
+    "ed70519a-62fc-4dee-9d44-af86d95b56bd" -> "fcc36b28-3043-4e31-ac82-f6ecbdf3e7f3";
+    "072fbd74-1786-4dcb-a0fb-4434858136b1" [shape=box, label="Update\nExtendChainSampleOperator#updatedMid2"];
+    "ed70519a-62fc-4dee-9d44-af86d95b56bd" -> "072fbd74-1786-4dcb-a0fb-4434858136b1";
+    "453c795f-02b1-4266-9137-2a228dc36f04" -> "ed70519a-62fc-4dee-9d44-af86d95b56bd";
+    "0ee6673c-1fe7-417a-9f06-8862aa978be7" -> "67cd2ee1-6106-4856-9818-3a496f8d9172";
+    "fbb9b3ed-6c5b-4dc4-9904-3f14a24ec1c7" -> "0ee6673c-1fe7-417a-9f06-8862aa978be7";
 }

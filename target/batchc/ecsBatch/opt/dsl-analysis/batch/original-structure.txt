@@ -5,9 +5,10 @@ flow: TheExtendChainSampleJobFlow
     output:
         result (ironpeace.jobflow.ResultToCsv)
     flow: ironpeace.jobflow.ExtendChainSampleJobFlow
-        operator: ironpeace.operator.ExtendChainSampleOperator#convert2([class ironpeace.modelgen.dmdl.model.Middata2])[]
         operator: com.asakusafw.vocabulary.flow.util.CoreOperatorFactory$Extend#toString([])[]
+        operator: ironpeace.operator.ExtendChainSampleOperator#updatedMid2([class ironpeace.modelgen.dmdl.model.Middata2])[]
         output: OutputDescription{name=result, type=class ironpeace.modelgen.dmdl.model.Result}
         input: InputDescription{name=orignaldata, type=class ironpeace.modelgen.dmdl.model.OriginalData}
+        operator: com.asakusafw.vocabulary.flow.util.CoreOperatorFactory$Project#toString([])[]
+        operator: ironpeace.operator.ExtendChainSampleOperator#updatedMid1([class ironpeace.modelgen.dmdl.model.Middata1])[]
         operator: com.asakusafw.vocabulary.flow.util.CoreOperatorFactory$Extend#toString([])[]
-        operator: ironpeace.operator.ExtendChainSampleOperator#convert1([class ironpeace.modelgen.dmdl.model.Middata1])[]

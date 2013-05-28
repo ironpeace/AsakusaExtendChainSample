@@ -1,10 +1,10 @@
 digraph {
     rankdir = LR;
-    "f02fdefc-b370-4db9-94f8-8fc2d9d3693b" [shape=box, label="Batch\nExtendChainSampleBatch"];
-    "806f5194-995d-431b-a068-5b39d115286f" [shape=box, label="JobFlow\nExtendChainSampleJobFlow"];
-    "b7fb275f-4b81-403a-a2b9-94346ceb5b90" [shape=box, label="Convert\nExtendChainSampleOperator#convert2"];
-    "806f5194-995d-431b-a068-5b39d115286f" -> "b7fb275f-4b81-403a-a2b9-94346ceb5b90";
-    "66c2e212-2a57-44c1-ab15-b92132abc19f" [shape=box, label="Convert\nExtendChainSampleOperator#convert1"];
-    "806f5194-995d-431b-a068-5b39d115286f" -> "66c2e212-2a57-44c1-ab15-b92132abc19f";
-    "f02fdefc-b370-4db9-94f8-8fc2d9d3693b" -> "806f5194-995d-431b-a068-5b39d115286f";
+    "cdc42cd6-7ae5-461e-8303-44eb0551817a" [shape=box, label="Batch\nExtendChainSampleBatch"];
+    "344e1f28-0b2a-45c4-8eed-be318eb2a4ef" [shape=box, label="JobFlow\nExtendChainSampleJobFlow"];
+    "7a339ca6-d2be-4fee-9d12-68197ad14268" [shape=box, label="Update\nExtendChainSampleOperator#updatedMid2"];
+    "344e1f28-0b2a-45c4-8eed-be318eb2a4ef" -> "7a339ca6-d2be-4fee-9d12-68197ad14268";
+    "08cfb932-dba7-4e23-bd27-1246afb19cae" [shape=box, label="Update\nExtendChainSampleOperator#updatedMid1"];
+    "344e1f28-0b2a-45c4-8eed-be318eb2a4ef" -> "08cfb932-dba7-4e23-bd27-1246afb19cae";
+    "cdc42cd6-7ae5-461e-8303-44eb0551817a" -> "344e1f28-0b2a-45c4-8eed-be318eb2a4ef";
 }

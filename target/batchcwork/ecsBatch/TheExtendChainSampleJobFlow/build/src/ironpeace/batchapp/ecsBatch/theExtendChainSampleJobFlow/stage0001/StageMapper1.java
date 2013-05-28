@@ -1,16 +1,13 @@
 package ironpeace.batchapp.ecsBatch.theExtendChainSampleJobFlow.stage0001;
 import com.asakusafw.runtime.core.Result;
 import com.asakusafw.runtime.flow.RuntimeResourceManager;
-import com.asakusafw.runtime.flow.VoidResult;
 import com.asakusafw.runtime.stage.output.StageOutputDriver;
-import ironpeace.modelgen.dmdl.model.Middata1;
-import ironpeace.modelgen.dmdl.model.Middata2;
 import ironpeace.modelgen.dmdl.model.OriginalData;
 import java.io.IOException;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.mapreduce.Mapper;
 /**
- * {@code [in->extend(operator#263851830){owner=FlowBlock&#64;1864311781}]}の処理を担当するマッププログラム。
+ * {@code [in->extend(operator#2057870563){owner=FlowBlock&#64;1720854532}]}の処理を担当するマッププログラム。
  */
 @SuppressWarnings("deprecation") public final class StageMapper1 extends Mapper<NullWritable, OriginalData, NullWritable
         , NullWritable> {
@@ -23,8 +20,7 @@ import org.apache.hadoop.mapreduce.Mapper;
         this.runtimeResourceManager.setup();
         this.outputs = new StageOutputDriver(context);
         final Result<ironpeace.modelgen.dmdl.model.Result> output = outputs.getResultSink("result0");
-        final MapFragment2 line0 = new MapFragment2(new VoidResult<Middata2>(), output);
-        this.line = new MapFragment1(new VoidResult<Middata1>(), line0);
+        this.line = new MapFragment1(output);
     }
     @Override public void cleanup(Context context) throws IOException, InterruptedException {
         this.runtimeResourceManager.cleanup();

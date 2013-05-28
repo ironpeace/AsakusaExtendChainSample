@@ -34,11 +34,8 @@ middata2 = middata1 + {
     "alert"
     alert : TEXT;
 };
-
-"result"
-@directio.csv(
-    has_header = TRUE
-)
+@auto_projection
+@directio.csv(has_header = TRUE)
 result = {
     "userid"
     @directio.csv.field(name = "userid")

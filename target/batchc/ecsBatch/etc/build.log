@@ -1,8 +1,8 @@
 core.batchId = ecsBatch
-core.buildId = fbe4f647-64ed-4a92-b904-da15e393dbe6
+core.buildId = 04bce579-ffe8-4400-bf58-98508381dadd
 ASAKUSA_HOME = /Users/ITPUser/dev/asakusa/asakusa-develop/asakusa
 com.asakusafw.batchapp.build.java.version = 1.6.0_45
-com.asakusafw.batchapp.build.timestamp = 2013-05-28 12:10:20
+com.asakusafw.batchapp.build.timestamp = 2013-05-29 08:17:45
 com.asakusafw.batchapp.project.version = 1.0-SNAPSHOT
 com.asakusafw.compiler.options = 
 com.asakusafw.framework.version = 0.4.0

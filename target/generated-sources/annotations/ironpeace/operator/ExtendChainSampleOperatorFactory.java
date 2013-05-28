@@ -4,10 +4,9 @@ import com.asakusafw.vocabulary.flow.Source;
 import com.asakusafw.vocabulary.flow.graph.FlowElementResolver;
 import com.asakusafw.vocabulary.flow.graph.ObservationCount;
 import com.asakusafw.vocabulary.flow.graph.OperatorDescription;
-import com.asakusafw.vocabulary.operator.Convert;
+import com.asakusafw.vocabulary.operator.Update;
 import ironpeace.modelgen.dmdl.model.Middata1;
 import ironpeace.modelgen.dmdl.model.Middata2;
-import ironpeace.modelgen.dmdl.model.Result;
 import javax.annotation.Generated;
 /**
  * {@link ExtendChainSampleOperator}に関する演算子ファクトリークラス。
@@ -16,26 +15,21 @@ import javax.annotation.Generated;
 @Generated("OperatorFactoryClassGenerator:0.0.1") public class ExtendChainSampleOperatorFactory {
     /**
      */
-    public static final class Convert1 implements Operator {
+    public static final class UpdatedMid1 implements Operator {
         private final FlowElementResolver $;
         /**
-         * 入力された内容
-         */
-        public final Source<Middata1> original;
-        /**
+         * 結果
          */
         public final Source<Middata1> out;
-        Convert1(Source<Middata1> mid1) {
-            OperatorDescription.Builder builder = new OperatorDescription.Builder(Convert.class);
-            builder.declare(ExtendChainSampleOperator.class, ExtendChainSampleOperatorImpl.class, "convert1");
+        UpdatedMid1(Source<Middata1> mid1) {
+            OperatorDescription.Builder builder = new OperatorDescription.Builder(Update.class);
+            builder.declare(ExtendChainSampleOperator.class, ExtendChainSampleOperatorImpl.class, "updatedMid1");
             builder.declareParameter(Middata1.class);
             builder.addInput("mid1", mid1);
-            builder.addOutput("original", mid1);
-            builder.addOutput("out", Middata1.class);
+            builder.addOutput("out", mid1);
             builder.addAttribute(ObservationCount.DONT_CARE);
             this.$ = builder.toResolver();
             this.$.resolveInput("mid1", mid1);
-            this.original = this.$.resolveOutput("original");
             this.out = this.$.resolveOutput("out");
         }
         /**
@@ -44,7 +38,7 @@ import javax.annotation.Generated;
          * @return この演算子オブジェクト (this)
          * @throws IllegalArgumentException 引数に{@code null}が指定された場合
          */
-        public ExtendChainSampleOperatorFactory.Convert1 as(String newName) {
+        public ExtendChainSampleOperatorFactory.UpdatedMid1 as(String newName) {
             this.$.setName(newName);
             return this;
         }
@@ -52,33 +46,28 @@ import javax.annotation.Generated;
     /**
      * @param mid1
      * @return 生成した演算子オブジェクト
-     * @see ExtendChainSampleOperator#convert1(Middata1)
+     * @see ExtendChainSampleOperator#updatedMid1(Middata1)
      */
-    public ExtendChainSampleOperatorFactory.Convert1 convert1(Source<Middata1> mid1) {
-        return new ExtendChainSampleOperatorFactory.Convert1(mid1);
+    public ExtendChainSampleOperatorFactory.UpdatedMid1 updatedMid1(Source<Middata1> mid1) {
+        return new ExtendChainSampleOperatorFactory.UpdatedMid1(mid1);
     }
     /**
      */
-    public static final class Convert2 implements Operator {
+    public static final class UpdatedMid2 implements Operator {
         private final FlowElementResolver $;
         /**
-         * 入力された内容
+         * 結果
          */
-        public final Source<Middata2> original;
-        /**
-         */
-        public final Source<Result> out;
-        Convert2(Source<Middata2> mid2) {
-            OperatorDescription.Builder builder0 = new OperatorDescription.Builder(Convert.class);
-            builder0.declare(ExtendChainSampleOperator.class, ExtendChainSampleOperatorImpl.class, "convert2");
+        public final Source<Middata2> out;
+        UpdatedMid2(Source<Middata2> mid2) {
+            OperatorDescription.Builder builder0 = new OperatorDescription.Builder(Update.class);
+            builder0.declare(ExtendChainSampleOperator.class, ExtendChainSampleOperatorImpl.class, "updatedMid2");
             builder0.declareParameter(Middata2.class);
             builder0.addInput("mid2", mid2);
-            builder0.addOutput("original", mid2);
-            builder0.addOutput("out", Result.class);
+            builder0.addOutput("out", mid2);
             builder0.addAttribute(ObservationCount.DONT_CARE);
             this.$ = builder0.toResolver();
             this.$.resolveInput("mid2", mid2);
-            this.original = this.$.resolveOutput("original");
             this.out = this.$.resolveOutput("out");
         }
         /**
@@ -87,7 +76,7 @@ import javax.annotation.Generated;
          * @return この演算子オブジェクト (this)
          * @throws IllegalArgumentException 引数に{@code null}が指定された場合
          */
-        public ExtendChainSampleOperatorFactory.Convert2 as(String newName0) {
+        public ExtendChainSampleOperatorFactory.UpdatedMid2 as(String newName0) {
             this.$.setName(newName0);
             return this;
         }
@@ -95,9 +84,9 @@ import javax.annotation.Generated;
     /**
      * @param mid2
      * @return 生成した演算子オブジェクト
-     * @see ExtendChainSampleOperator#convert2(Middata2)
+     * @see ExtendChainSampleOperator#updatedMid2(Middata2)
      */
-    public ExtendChainSampleOperatorFactory.Convert2 convert2(Source<Middata2> mid2) {
-        return new ExtendChainSampleOperatorFactory.Convert2(mid2);
+    public ExtendChainSampleOperatorFactory.UpdatedMid2 updatedMid2(Source<Middata2> mid2) {
+        return new ExtendChainSampleOperatorFactory.UpdatedMid2(mid2);
     }
 }

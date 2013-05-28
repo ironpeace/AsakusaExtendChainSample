@@ -5,8 +5,8 @@ import ironpeace.modelgen.dmdl.model.Middata2;
 import ironpeace.modelgen.dmdl.model.OriginalData;
 import ironpeace.modelgen.dmdl.model.Result;
 import ironpeace.operator.ExtendChainSampleOperatorFactory;
-import ironpeace.operator.ExtendChainSampleOperatorFactory.Convert1;
-import ironpeace.operator.ExtendChainSampleOperatorFactory.Convert2;
+import ironpeace.operator.ExtendChainSampleOperatorFactory.UpdatedMid1;
+import ironpeace.operator.ExtendChainSampleOperatorFactory.UpdatedMid2;
 
 import com.asakusafw.vocabulary.flow.Export;
 import com.asakusafw.vocabulary.flow.FlowDescription;
@@ -16,6 +16,7 @@ import com.asakusafw.vocabulary.flow.JobFlow;
 import com.asakusafw.vocabulary.flow.Out;
 import com.asakusafw.vocabulary.flow.util.CoreOperatorFactory;
 import com.asakusafw.vocabulary.flow.util.CoreOperatorFactory.Extend;
+import com.asakusafw.vocabulary.flow.util.CoreOperatorFactory.Project;
 
 @JobFlow(name="TheExtendChainSampleJobFlow")
 public class ExtendChainSampleJobFlow extends FlowDescription {
@@ -42,15 +43,16 @@ public class ExtendChainSampleJobFlow extends FlowDescription {
 		Extend<Middata1> mid1
 			= coreOp.extend(originaldata, Middata1.class);
 		
-		Convert1 convertedMid1 = op.convert1(mid1.out);
-		coreOp.stop(convertedMid1.original);
-		
+		UpdatedMid1 updatedMid1 = op.updatedMid1(mid1);
+
 		Extend<Middata2> mid2
-			= coreOp.extend(convertedMid1.out, Middata2.class);
+			= coreOp.extend(updatedMid1.out, Middata2.class);
 		
-		Convert2 convertedResult = op.convert2(mid2.out);
-		coreOp.stop(convertedResult.original);
+		UpdatedMid2 updatedMid2 = op.updatedMid2(mid2);
 		
-		result.add(convertedResult.out);
+		Project<Result> ret
+			= coreOp.project(updatedMid2.out, Result.class);
+		
+		result.add(ret);
 	}
 }
