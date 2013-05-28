@@ -1,0 +1,19 @@
+batch: ecsBatch
+flow: TheExtendChainSampleJobFlow
+    input:
+        orignaldata (ironpeace.jobflow.OriginaldataFromCsv)
+    output:
+        result (ironpeace.jobflow.ResultToCsv)
+    stages:
+        prologue:
+        main:
+            stage: ironpeace.batchapp.ecsBatch.theExtendChainSampleJobFlow.stage0001.StageClient
+                mapper: ironpeace.batchapp.ecsBatch.theExtendChainSampleJobFlow.stage0001.StageMapper1
+                    fragment: ironpeace.batchapp.ecsBatch.theExtendChainSampleJobFlow.stage0001.MapFragment1
+                        operator: com.asakusafw.vocabulary.flow.util.CoreOperatorFactory$Extend#toString([])[]
+                        operator: ironpeace.operator.ExtendChainSampleOperator#convert1([class ironpeace.modelgen.dmdl.model.Middata1])[]
+                    fragment: ironpeace.batchapp.ecsBatch.theExtendChainSampleJobFlow.stage0001.MapFragment2
+                        operator: com.asakusafw.vocabulary.flow.util.CoreOperatorFactory$Extend#toString([])[]
+                        operator: ironpeace.operator.ExtendChainSampleOperator#convert2([class ironpeace.modelgen.dmdl.model.Middata2])[]
+        epilogue:
+            stage: ironpeace.batchapp.ecsBatch.theExtendChainSampleJobFlow.directio.epilogue.StageClient

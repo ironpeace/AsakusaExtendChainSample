@@ -1,0 +1,74 @@
+"OriginalData"
+@directio.csv(has_header = TRUE)
+original_data = {
+    "userid"
+    @directio.csv.field(name = "userid")
+    userid : TEXT;
+
+    "data1_0"
+    @directio.csv.field(name = "data1_0")
+    data1_0 : LONG;
+
+    "data1_1"
+    @directio.csv.field(name = "data1_1")
+    data1_1 : LONG;
+
+    "data2_0"
+    @directio.csv.field(name = "data2_0")
+    data2_0 : LONG;
+
+    "data2_1"
+    @directio.csv.field(name = "data2_1")
+    data2_1 : LONG;
+};
+
+middata1 = original_data + {
+    "mid1"
+    mid1 : LONG;
+
+    "mid2"
+    mid2 : LONG;
+};
+
+middata2 = middata1 + {
+    "alert"
+    alert : TEXT;
+};
+
+"result"
+@directio.csv(
+    has_header = TRUE
+)
+result = {
+    "userid"
+    @directio.csv.field(name = "userid")
+    userid : TEXT;
+
+    "data1_0"
+    @directio.csv.field(name = "data1_0")
+    data1_0 : LONG;
+
+    "data1_1"
+    @directio.csv.field(name = "data1_1")
+    data1_1 : LONG;
+
+    "data2_0"
+    @directio.csv.field(name = "data2_0")
+    data2_0 : LONG;
+
+    "data2_1"
+    @directio.csv.field(name = "data2_1")
+    data2_1 : LONG;
+
+    "mid1"
+    @directio.csv.field(name = "mid1")
+    mid1 : LONG;
+
+    "mid2"
+    @directio.csv.field(name = "mid2")
+    mid2 : LONG;
+
+    "alert"
+    @directio.csv.field(name = "alert")
+    alert : TEXT;
+};

@@ -1,0 +1,10 @@
+digraph {
+    rankdir = LR;
+    "e75bed49-340d-417d-9d2f-064a5a05f96b" [shape=box, label="Batch\nExtendChainSampleBatch"];
+    "bb0aafe6-0dfc-40ee-a8d6-b66290505eb8" [shape=box, label="JobFlow\nExtendChainSampleJobFlow"];
+    "65db9e4b-b5a1-4391-9171-bdc2553393d0" [shape=box, label="Convert\nExtendChainSampleOperator#convert2"];
+    "bb0aafe6-0dfc-40ee-a8d6-b66290505eb8" -> "65db9e4b-b5a1-4391-9171-bdc2553393d0";
+    "7fc332e0-102d-4f41-8381-214b251e3c99" [shape=box, label="Convert\nExtendChainSampleOperator#convert1"];
+    "bb0aafe6-0dfc-40ee-a8d6-b66290505eb8" -> "7fc332e0-102d-4f41-8381-214b251e3c99";
+    "e75bed49-340d-417d-9d2f-064a5a05f96b" -> "bb0aafe6-0dfc-40ee-a8d6-b66290505eb8";
+}
